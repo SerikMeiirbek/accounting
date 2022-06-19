@@ -54,9 +54,9 @@ public enum State {
     WYOMING("Wyoming","WY"),
     PUERTO_RICO("Puerto Rico","PR");
 
-    String stateName;
+    private String stateName;
 
-    String stateCode;
+    private String stateCode;
 
     State(String stateName, String stateCode) {
         this.stateName = stateName;
@@ -82,17 +82,17 @@ public enum State {
      * @param input String to parse
      * @return The parsed US state, or null on failure.
      */
-    public static State parse(String input) {
-        if (null == input) {
-            return null;
-        }
-        input = input.trim();
-        for (State state : values()) {
-            if (state.stateCode.equalsIgnoreCase(input)||
-                    state.stateName.equalsIgnoreCase(input)) {
-                return state;
-            }
-        }
-        return null;
-    }
+//    public static State parse(String input) {
+//        if (null == input) {
+//            return null;
+//        }
+//        input = input.trim();
+//        for (State state : values()) {
+//            if (state.stateCode.equalsIgnoreCase(input)||
+//                    state.stateName.equalsIgnoreCase(input)) {
+//                return state;
+//            }
+//        }
+//        return null;
+//    }
 }
