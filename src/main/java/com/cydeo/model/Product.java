@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class Product extends BaseEntity{
 
     private String name;
-    private String category;
     private String description;
     private Long low_limit_alert;
     @Enumerated(EnumType.STRING)
@@ -22,16 +21,20 @@ public class Product extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    //Quantity?
-    //Edit?
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    private Company company;
 
-    //@OneToMany(mappedBy = "company_id",cascade = CascadeType.ALL)
+
+
+    //@ManyToMany(mappedBy = "company_id",cascade = CascadeType.ALL)
     //@JoinColumn(name = "invoice_product")
     //private Invoice invoice;
 
     //@OneToOne
    //private StockDetails stockDetails;
 
-    //@OneToOne
+   // @ManyToOne()
+    //@JoinColumn(name = "category_id")
     //private Category category;
 }
