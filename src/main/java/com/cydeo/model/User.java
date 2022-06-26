@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Table(name = "user")
+@Entity
 public class User extends BaseEntity{
 
     private String email;
@@ -31,9 +32,9 @@ public class User extends BaseEntity{
     private LocalDateTime updatedTime;
     private boolean isDeleted;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+//    @ManyToOne
+//    @JoinColumn(name = "role_id")
+//    private Role role;
 
 
 
