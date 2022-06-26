@@ -3,6 +3,7 @@ package com.cydeo.model;
 import com.cydeo.enums.State;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,7 +11,8 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Data
-@Entity
+@Table(name = "company")
+@Where(clause = "is_deleted=false")
 public class Company extends BaseEntity{
 
     private String address1;
@@ -21,19 +23,13 @@ public class Company extends BaseEntity{
     @Column(columnDefinition = "Date")
     private LocalDate establishmentDate;
     private boolean enabled;
-    private String createdBy;
-    @Column(columnDefinition = "Date")
-    private LocalDateTime createdTime;
-    private String updatedBy;
-    @Column(columnDefinition = "Date")
-    private LocalDateTime updatedTime;
     private String phone;
 
 
     @Enumerated(EnumType.STRING)
     private State state;
 
-    private boolean isDeleted;
+
 
 
 
