@@ -2,6 +2,7 @@ package com.cydeo.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Table(name = "user")
-@Entity
+@Where(clause = "is_deleted=false")
 public class User extends BaseEntity{
 
     private String email;
@@ -23,18 +24,10 @@ public class User extends BaseEntity{
     @JoinColumn(name = "company_id")
     private Company company;
 
-    private String createdBy;
-    @Column(columnDefinition = "Data")
-    private LocalDateTime createdTime;
 
-    private String updatedBy;
-    @Column(columnDefinition = "Date")
-    private LocalDateTime updatedTime;
-    private boolean isDeleted;
-
-//    @ManyToOne
-//    @JoinColumn(name = "role_id")
-//    private Role role;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private Role role;
 
 
 
