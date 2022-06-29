@@ -2,6 +2,7 @@ package com.cydeo.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -11,9 +12,11 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @Data
+@Where(clause = "is_deleted-false")
 public class Payment extends BaseEntity{
 
-    private String month;
+    @Enumerated(EnumType.STRING)
+    private Month month;
     private LocalDateTime year;
     private BigDecimal amount;
     private boolean is_paid = false;
