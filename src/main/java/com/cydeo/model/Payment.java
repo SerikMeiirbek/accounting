@@ -1,5 +1,6 @@
 package com.cydeo.model;
 
+import com.cydeo.enums.Month;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Where;
