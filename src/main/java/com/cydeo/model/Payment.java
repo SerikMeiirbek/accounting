@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @Data
-@Where(clause = "is_deleted-false")
+@Where(clause = "is_deleted=false")
 public class Payment extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
