@@ -7,7 +7,8 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 
 @Entity
@@ -18,7 +19,7 @@ public class Payment extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     private Month month;
-    private LocalDateTime year;
+    private LocalDate year;
     private BigDecimal amount;
     private boolean is_paid = false;
     private Long institution_id;
