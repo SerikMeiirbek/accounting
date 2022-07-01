@@ -27,12 +27,12 @@ public class Product extends BaseEntity{
 
 
 
-    //@ManyToMany(mappedBy = "company_id",cascade = CascadeType.ALL)
-    //@JoinColumn(name = "invoice_product")
-    //private Invoice invoice;
+//    @ManyToMany(mappedBy = "company_id",cascade = CascadeType.ALL)
+//    @JoinColumn(name = "invoice_product")
+//    private Invoice invoice;
 
-    //@OneToOne
-   //private StockDetails stockDetails;
+//    @OneToOne
+//   private StockDetails stockDetails;
 
     @ManyToOne()
     @JoinColumn(name = "category_id")
