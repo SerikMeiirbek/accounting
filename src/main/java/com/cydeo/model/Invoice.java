@@ -1,7 +1,7 @@
 package com.cydeo.model;
 
-import com.cydeo.dto.enums.InvoiceStatus;
-import com.cydeo.dto.enums.InvoiceType;
+import com.cydeo.enums.InvoiceStatus;
+import com.cydeo.enums.InvoiceType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Where;

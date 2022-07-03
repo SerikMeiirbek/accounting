@@ -1,7 +1,7 @@
 package com.cydeo.dto;
 
 
-import com.cydeo.dto.enums.Month;
+import com.cydeo.enums.Month;
 import com.cydeo.model.Company;
 import lombok.AllArgsConstructor;
 import lombok.Data;

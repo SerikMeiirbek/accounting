@@ -1,8 +1,8 @@
 package com.cydeo.dto;
 
 
-import com.cydeo.dto.enums.Status;
-import com.cydeo.dto.enums.Unit;
+import com.cydeo.enums.Status;
+import com.cydeo.enums.Unit;
 import com.cydeo.model.Category;
 import com.cydeo.model.Company;
 import com.cydeo.model.Invoice;

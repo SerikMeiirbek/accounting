@@ -1,4 +1,4 @@
-package com.cydeo.dto.enums;
+package com.cydeo.enums;
 
 public enum InvoiceStatus {
     APPROVED("Approved"), PENDING("Pending");

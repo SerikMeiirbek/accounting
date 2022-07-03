@@ -1,7 +1,7 @@
 package com.cydeo.model;
 
-import com.cydeo.dto.enums.Status;
-import com.cydeo.dto.enums.Unit;
+import com.cydeo.enums.Status;
+import com.cydeo.enums.Unit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

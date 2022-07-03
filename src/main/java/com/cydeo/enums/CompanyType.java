@@ -1,9 +1,11 @@
-package com.cydeo.dto.enums;
+package com.cydeo.enums;
 
-public enum InvoiceType {
-    SALE("Sale"), PURCHASE("Purchase");
+public enum CompanyType {
+    VENDOR("Vendor"), CLIENT("Client");
+
     private final String value;
-    InvoiceType(String value) {
+
+    CompanyType(String value) {
         this.value = value;
     }
 
