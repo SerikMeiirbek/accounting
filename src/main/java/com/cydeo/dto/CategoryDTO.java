@@ -14,6 +14,9 @@ import javax.validation.constraints.NotNull;
 @Data
 public class CategoryDTO {
 
+    @NotNull
+    private Long id;
+
     @NotBlank
     private String description;
 
