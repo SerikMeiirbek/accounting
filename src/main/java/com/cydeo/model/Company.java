@@ -1,13 +1,12 @@
 package com.cydeo.model;
 
-import com.cydeo.enums.State;
+import com.cydeo.dto.enums.State;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
