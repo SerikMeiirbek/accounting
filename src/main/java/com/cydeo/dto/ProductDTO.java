@@ -20,6 +20,8 @@ import javax.validation.constraints.Size;
 @Data
 public class ProductDTO {
 
+    @NotNull
+    private Long id;
 
     @NotBlank
     @Size(min = 2, max = 20)
@@ -29,7 +31,7 @@ public class ProductDTO {
     @Size(min = 2, max = 20)
     private String description;
 
-    @NotBlank // @NotBlank or @NotNull?
+    @NotBlank
     private Long low_limit_alert;
 
     private Unit unit;
@@ -41,11 +43,7 @@ public class ProductDTO {
     @NotNull
     private Category category;
 
-    @NotNull
-    private Invoice invoice; //Not sure if needs to be here
 
-    @NotNull
-    private StockDetails stockDetails; //Not sure the location
 
 
 }
