@@ -4,6 +4,7 @@ import com.cydeo.enums.Status;
 import com.cydeo.enums.Unit;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Data
+@Where(clause = "is_deleted=false")
 public class Product extends BaseEntity{
 
     private String name;
@@ -24,15 +26,6 @@ public class Product extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
-
-
-
-//    @ManyToMany(mappedBy = "company_id",cascade = CascadeType.ALL)
-//    @JoinColumn(name = "invoice_product")
-//    private Invoice invoice;
-
-//    @OneToOne
-//   private StockDetails stockDetails;
 
     @ManyToOne()
     @JoinColumn(name = "category_id")
