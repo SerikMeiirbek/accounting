@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Data
 public class CompanyDTO {
 
+    private Long id;
     private String address1;
     private String address2;
     private String zip;

@@ -7,6 +7,7 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 @NoArgsConstructor
 @Data
 @Table(name = "stock_details")

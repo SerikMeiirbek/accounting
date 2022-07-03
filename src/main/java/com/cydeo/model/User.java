@@ -7,9 +7,10 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 @NoArgsConstructor
 @Data
-@Table(name = "user")
+@Table(name = "users")
 @Where(clause = "is_deleted=false")
 public class User extends BaseEntity{
 

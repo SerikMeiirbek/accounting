@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 public class StockDetailsDTO {
 
+    private Long id;
     private LocalDateTime iDate;
     private Long quantity;
     private Long price;
