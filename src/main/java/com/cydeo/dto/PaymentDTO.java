@@ -17,6 +17,9 @@ import java.time.LocalDate;
 public class PaymentDTO {
 
     @NotNull
+    private Long id;
+
+    @NotNull
     private Month month;
 
     @NotNull
