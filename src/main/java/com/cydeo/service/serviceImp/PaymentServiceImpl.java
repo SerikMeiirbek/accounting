@@ -3,11 +3,14 @@ package com.cydeo.service.serviceImp;
 import com.cydeo.dto.PaymentDTO;
 import com.cydeo.enums.Month;
 import com.cydeo.service.PaymentService;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+
+@Service
 public class PaymentServiceImpl implements PaymentService {
     @Override
     public List<PaymentDTO> getAllPayments() {

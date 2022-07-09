@@ -4,9 +4,11 @@ import com.cydeo.dto.CategoryDTO;
 import com.cydeo.dto.ProductDTO;
 import com.cydeo.enums.Status;
 import com.cydeo.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Override
