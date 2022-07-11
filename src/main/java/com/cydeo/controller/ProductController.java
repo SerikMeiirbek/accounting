@@ -28,7 +28,7 @@ public class ProductController {
         List<ProductDTO> productList = productService.getAllProducts();
         model.addAttribute("products_list", productList);
 
-        return "product-list";
+        return "/product/product-list";
     }
 
     @GetMapping("/get/{productId}")
