@@ -1,8 +1,8 @@
 package com.cydeo.service;
 
-import com.cydeo.dto.CategoryDTO;
+
 import com.cydeo.dto.ProductDTO;
-import com.cydeo.enums.Status;
+
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ public interface ProductService {
 
     List<ProductDTO> getAllProducts();
 
-    ProductDTO registerAProduct(ProductDTO productDTO); //Method naming convention???
+    ProductDTO registerAProduct(ProductDTO productDTO);
 
-    ProductDTO createANewProductCategory(CategoryDTO categoryDTO);//Not sure?
+    //ProductDTO createANewProductCategory(CategoryDTO categoryDTO);// Create in Category service
 
-    ProductDTO findByStatus(Status status); //Not sure
+    //ProductDTO findByStatus(Status status); // If want to use create Repository
 
-    ProductDTO findByCategory(CategoryDTO categoryDTO); //???
+    //ProductDTO findByCategory(CategoryDTO categoryDTO); // Repository
 
     ProductDTO findById(long productId);
 

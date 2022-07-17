@@ -11,16 +11,4 @@ public interface PaymentService {
 
     List<PaymentDTO> getAllPayments(); //??? might filter
 
-    PaymentDTO findByMonth(Month month);
-
-    PaymentDTO findByYear(LocalDate localDate);
-
-    PaymentDTO fidByAmount(BigDecimal amount);
-
-    PaymentDTO findByInstitutionId();
-
-   PaymentDTO createPayment(PaymentDTO paymentDTO);//???
-
-      //Update-> no payment id?
-      //Delete
 }
