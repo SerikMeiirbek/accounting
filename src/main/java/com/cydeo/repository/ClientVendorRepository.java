@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface ClientVendorRepository extends JpaRepository<ClientVendor,Long> {
 
+
+
 }
