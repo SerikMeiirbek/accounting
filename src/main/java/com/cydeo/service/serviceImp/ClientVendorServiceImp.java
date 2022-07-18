@@ -47,7 +47,9 @@ public class ClientVendorServiceImp implements ClientVendorService {
 
     @Override
     public ClientVendorDTO findById(Long id) {
+
         Optional<ClientVendor> clientVendor = clientVendorRepository.findById(id);
+
         return mapperUtil.convert(clientVendor, new ClientVendorDTO());
     }
 

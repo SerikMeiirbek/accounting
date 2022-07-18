@@ -67,7 +67,6 @@ public class ClientVendorController {
 
         if (bindingResult.hasErrors()) {
 
-            //model.addAttribute("clientvendors", clientVendorService.listAllClientVendors());
 
             return "/clientvendor/client-vendor-edit";
 
