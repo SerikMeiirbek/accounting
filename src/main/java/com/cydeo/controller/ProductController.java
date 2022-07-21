@@ -1,13 +1,13 @@
 package com.cydeo.controller;
 
 import com.cydeo.dto.ProductDTO;
+import com.cydeo.enums.Status;
+import com.cydeo.enums.Unit;
+import com.cydeo.service.CategoryService;
 import com.cydeo.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,42 +17,51 @@ public class ProductController {
 
 
     private final ProductService productService;
+    private final CategoryService categoryService;
 
 
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, CategoryService categoryService) {
         this.productService = productService;
+        this.categoryService = categoryService;
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public String getAllProducts(Model model) {
-        List<ProductDTO> productList = productService.getAllProducts();
-        model.addAttribute("products_list", productList);
+        List<ProductDTO> productList = productService.findAllProducts();
+        model.addAttribute("products", productList);
 
         return "/product/product-list";
     }
 
-    @GetMapping("/get/{productId}")
-    public String getById(@PathVariable("productId") Long productId) {
-        productService.findById(productId);
 
-        return "product-list"; //Returning same view of product-list
+    @GetMapping("/create")
+    public String createProduct(Model model) {
 
-    }
-
-    @PostMapping("/create")///????
-    public String createProduct(Model model, ProductDTO productDTO) {
         model.addAttribute("product", new ProductDTO());
+        model.addAttribute("categories", categoryService.findAllCategories());
+        model.addAttribute("unit", Unit.values());
+        model.addAttribute("status", Status.values());
 
-        //productService.registerAProduct(productDTO); ///Not sure???
-
-        return "product-add";
+        return "product/product-add";
     }
 
-    @GetMapping("/update")
-    public String updateProduct(Long productId) {
-        productService.updateById(productId);
+    @PostMapping("/create")
+    public String createProduct(ProductDTO product) {
+        productService.registerAProduct(product);
+        return "redirect:/product/list";
+    }
 
-        return "product-edit";
+    //TODO: Double check the implementation
+//    @GetMapping("/update/{productId}")
+//    public String updateProduct(ProductDTO productDTO, @PathVariable("productId") Long productId) {
+//        productService.update(productDTO,productId);
+//        return "/product/product-edit";
+//    }
+
+    @PostMapping("update")
+    public String updateProduct(ProductDTO productDTO) {
+        productService.update(productDTO);
+        return "/product/product-edit";
     }
 
     @GetMapping("/{productId}")

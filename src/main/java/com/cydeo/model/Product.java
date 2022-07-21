@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 
 @Entity
@@ -17,6 +18,7 @@ public class Product extends BaseEntity{
 
     private String name;
     private String description;
+    private Long quantity;
     private Long low_limit_alert;
     @Enumerated(EnumType.STRING)
     private Unit unit;

@@ -8,6 +8,7 @@ import com.cydeo.util.MapperUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,7 +23,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<CategoryDTO> getAllCategories() {
+    public List<CategoryDTO> findAllCategories() {
         List<Category> categoryList = categoryRepository.findAll();
          return categoryList.stream().map(c -> mapperUtil.convert(c, new CategoryDTO())).collect(Collectors.toList());
 
@@ -41,10 +42,13 @@ public class CategoryServiceImpl implements CategoryService {
         return mapperUtil.convert(category, new CategoryDTO());
     }
 
-    //TODO: work on update
-    @Override
-    public void updateById(long categoryId) {
 
+    @Override
+    public void update(CategoryDTO categoryDTO) {
+        Optional<Category> category = categoryRepository.findById(categoryDTO.getId());
+          Category convertedCategory = mapperUtil.convert(categoryDTO,new Category());
+          convertedCategory.setId(category.get().getId());
+          categoryRepository.save(convertedCategory);
     }
 
     @Override
