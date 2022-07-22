@@ -51,8 +51,7 @@
                                                  aria-labelledby="account-tab">
 
                                                 <!-- Account form starts -->
-                                                <form novalidate
-                                                       method="post">
+                                                <form  th:action="@{/product/create}" method="post" th:object="${product}">
                                                     <div class="row">
                                                         <div class="col-12 col-md-6">
                                                             <div class="form-group">
@@ -72,12 +71,13 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="users-edit-username">Name</label>
-                                                                    <input type="text" id="users-edit-username"
+                                                                    <input  type="text" id="users-edit-username"
                                                                            class="form-control"
+                                                                            th:field="*{name}"
                                                                            placeholder="Product Name"
                                                                            value="" required
                                                                            aria-invalid="false"
-                                                                           >
+                                                                            >
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -85,6 +85,7 @@
                                                                     <label for="quantity">Quantity</label>
                                                                     <input type="number" id="quantity"
                                                                            class="form-control"
+                                                                           th:field="*{quantity}"
                                                                            placeholder="Quantity"
                                                                            value="" required aria-invalid="false"
                                                                            >
@@ -94,12 +95,13 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="users-edit-status">Status</label>
-                                                                    <select id="users-edit-status"
+                                                                    <select th:field="*{status}" id="users-edit-status"
                                                                             class="form-control"
                                                                             required  aria-invalid="false"
                                                                             >
                                                                         <option value="">Select Status</option>
-                                                                        <option
+                                                                        <option th:each="eachStatus : ${status}"
+                                                                                 th:value="${eachStatus}" th:text="${eachStatus.getValue()}"
 
                                                                         ></option>
 
@@ -113,12 +115,13 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="users-edit-status">Category</label>
-                                                                    <select
+                                                                    <select th:field="*{category}"
                                                                             id="users-edit-status1"
                                                                             class="form-control"
-                                                                            required>
-                                                                        <option value="">Select Category</option>
-                                                                        <option ></option>
+                                                                            required >
+                                                                        <option value="''">Select Category</option>
+                                                                        <option th:each="category : ${categories}"
+                                                                                th:value="${category.id}" th:text="${category.description}"></option>
 
                                                                     </select>
                                                                 </div>
@@ -130,18 +133,19 @@
                                                                            class="form-control"
                                                                            placeholder="Ex: Home product, Kitchen Tools "
                                                                            required
-                                                                           >
+                                                                          th:field="*{description}" >
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="users-edit-role">Unit</label>
-                                                                    <select  id="users-edit-role"
+                                                                    <select  th:field="*{unit}" id="users-edit-role"
                                                                             class="form-control"
                                                                             required>
-                                                                        <option value="">Select Unit</option>
-                                                                        <option >
+                                                                        <option th:value="''" >Select Unit</option>
+                                                                        <option th:each="unit : ${T(com.cydeo.enums.Unit).values()}"
+                                                                                 th:value="${unit}" th:text="${unit.getValue()}">
                                                                         </option>
 
                                                                     </select>
