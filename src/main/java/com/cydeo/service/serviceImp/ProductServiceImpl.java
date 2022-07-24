@@ -6,9 +6,11 @@ import com.cydeo.model.Product;
 import com.cydeo.repository.ProductRepository;
 import com.cydeo.service.ProductService;
 import com.cydeo.util.MapperUtil;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<ProductDTO> getAllProducts() {
+    public List<ProductDTO> findAllProducts() {
          List<Product> productList = productRepository.findAll();
           return   productList.stream().map(p-> mapperUtil.convert(p, new ProductDTO())).collect(Collectors.toList());
 
@@ -43,10 +45,25 @@ public class ProductServiceImpl implements ProductService {
           return  mapperUtil.convert(product, new ProductDTO());
     }
 
-    //TODO: work on the update
+
     @Override
-    public void updateById(long productId) {
+    public void update(@NotNull ProductDTO productDTO) {
+        Optional<Product> product = productRepository.findById(productDTO.getId());
+        Product convertedProduct = mapperUtil.convert(productDTO,new Product());
+        convertedProduct.setId(product.get().getId());
+        productRepository.save(convertedProduct);
     }
+
+    //TODO: Double check the implementation
+//    @Override
+//    public void update(ProductDTO productDTO, Long productId) {
+//           Optional<Product> product = productRepository.findById(productId);
+//           Product convertedProduct = mapperUtil.convert(productDTO, new Product());
+//
+//           convertedProduct.setId(product.get().getId());
+//           productRepository.save(convertedProduct);
+//
+//    }
 
     @Override
     public void deleteById(long productId) {
