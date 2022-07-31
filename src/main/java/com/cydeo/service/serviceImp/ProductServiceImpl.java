@@ -34,9 +34,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO registerAProduct(ProductDTO productDTO) {
-        productRepository.save(mapperUtil.convert(productDTO, new Product()));
+            Product product = productRepository.save(mapperUtil.convert(productDTO, new Product()));
 
-        return  productDTO;
+               return  mapperUtil.convert(product, new ProductDTO());
+
     }
 
     @Override
@@ -47,23 +48,14 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public void update(@NotNull ProductDTO productDTO) {
+    public void update(ProductDTO productDTO) {
         Optional<Product> product = productRepository.findById(productDTO.getId());
         Product convertedProduct = mapperUtil.convert(productDTO,new Product());
         convertedProduct.setId(product.get().getId());
         productRepository.save(convertedProduct);
+
     }
 
-    //TODO: Double check the implementation
-//    @Override
-//    public void update(ProductDTO productDTO, Long productId) {
-//           Optional<Product> product = productRepository.findById(productId);
-//           Product convertedProduct = mapperUtil.convert(productDTO, new Product());
-//
-//           convertedProduct.setId(product.get().getId());
-//           productRepository.save(convertedProduct);
-//
-//    }
 
     @Override
     public void deleteById(long productId) {
