@@ -15,14 +15,17 @@ public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
     @Column(nullable = false,updatable = false)
     private LocalDateTime createdTime;
+
     @Column(nullable = false)
     private LocalDateTime updatedTime;
+
     @Column(nullable = false)
     private Long createdUserId;
+
     @Column(nullable = false)
     private Long updatedUserId;
 

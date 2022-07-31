@@ -39,8 +39,9 @@ public class ProductController {
 
         model.addAttribute("product", new ProductDTO());
         model.addAttribute("categories", categoryService.findAllCategories());
-        model.addAttribute("unit", Unit.values());
         model.addAttribute("status", Status.values());
+        model.addAttribute("unit", Unit.values());
+
 
         return "product/product-add";
     }
@@ -51,22 +52,25 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
-    //TODO: Double check the implementation
-//    @GetMapping("/update/{productId}")
-//    public String updateProduct(ProductDTO productDTO, @PathVariable("productId") Long productId) {
-//        productService.update(productDTO,productId);
-//        return "/product/product-edit";
-//    }
 
-    @PostMapping("update")
+    @GetMapping("/update/{id}")
+    public String updateProduct(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("product", productService.findById(id));
+        model.addAttribute("category",categoryService.findAllCategories());
+        model.addAttribute("unit", Unit.values());
+        model.addAttribute("status", Status.values());
+        return "/product/product-edit";
+    }
+
+    @PostMapping("/update")
     public String updateProduct(ProductDTO productDTO) {
         productService.update(productDTO);
-        return "/product/product-edit";
+        return "redirect:/product/list";
     }
 
     @GetMapping("/{productId}")
     public String deleteProduct(@PathVariable("productId") Long productId) {
         productService.deleteById(productId);
-        return "redirect:/product-list";
+        return "redirect:/product/list";
     }
 }

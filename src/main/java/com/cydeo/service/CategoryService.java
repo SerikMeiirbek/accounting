@@ -10,7 +10,7 @@ public interface CategoryService {
 
   CategoryDTO createACategory(CategoryDTO categoryDTO);
 
-  CategoryDTO findById(long categoryId);
+  CategoryDTO findById(Long id);
 
   void update(CategoryDTO categoryDTO);
 
