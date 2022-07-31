@@ -53,6 +53,8 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteById(long categoryId) {
-        categoryRepository.deleteById(categoryId);
+        Optional<Category> category = categoryRepository.findById(categoryId);
+        category.get().setIsDeleted(true);
+         categoryRepository.save(category.get());
     }
 }

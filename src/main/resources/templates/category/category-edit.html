@@ -53,7 +53,7 @@
                                                  aria-labelledby="account-tab">
 
                                                 <!-- Account form starts -->
-                                                <form th:action="@{/category/update}" method="post" th:object="${category} " class="needs-validation" novalidate>
+                                                <form th:action="@{/category/update/{id}(id=${category.id})}" method="post" th:object="${category} " class="needs-validation" novalidate>
                                                     <div class="row">
                                                         <div class="col-12 col-md-6">
                                                             <div class="form-group">
@@ -77,12 +77,12 @@
                                                             </button>
 
 
-                                                            <a onclick="myFunction()"
+                                                            <a th:href="@{/category/delete/{id}(id=${category.id})}" onclick="myFunction()"
                                                                class="btn btn-danger mb-2 mb-sm-0 mr-sm-2">
                                                                 Delete Category</a>
 
-                                                            <a class="btn btn-danger mb-2 mb-sm-0 mr-sm-2">
-                                                                Delete Category</a>
+<!--                                                            <a class="btn btn-danger mb-2 mb-sm-0 mr-sm-2">-->
+<!--                                                                Delete Category</a>-->
 
 
                                                             <script>

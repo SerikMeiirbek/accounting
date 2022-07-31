@@ -49,14 +49,14 @@ public class CategoryController {
         return "/category/category-edit";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/update/{id}")
     public String updateCategory(CategoryDTO categoryDTO){
         categoryService.update(categoryDTO);
         return "redirect:/category/list";
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("delete/{id}")
     public String deleteCategory(@PathVariable("id") Long id){
         categoryService.deleteById(id);
         return "redirect:/category/list";

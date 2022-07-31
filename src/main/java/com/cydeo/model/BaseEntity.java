@@ -23,7 +23,7 @@ public class BaseEntity {
     @Column(nullable = false)
     private LocalDateTime updatedTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false,updatable = false)
     private Long createdUserId;
 
     @Column(nullable = false)

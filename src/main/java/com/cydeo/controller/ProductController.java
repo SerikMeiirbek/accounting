@@ -62,13 +62,13 @@ public class ProductController {
         return "/product/product-edit";
     }
 
-    @PostMapping("/update")
-    public String updateProduct(ProductDTO productDTO) {
+    @PostMapping("/update/{id}")
+    public String updateProduct( ProductDTO productDTO) {
         productService.update(productDTO);
         return "redirect:/product/list";
     }
 
-    @GetMapping("/{productId}")
+    @GetMapping("delete/{productId}")
     public String deleteProduct(@PathVariable("productId") Long productId) {
         productService.deleteById(productId);
         return "redirect:/product/list";
