@@ -1,6 +1,8 @@
 package com.cydeo.controller;
 
 import com.cydeo.dto.UserDTO;
+import com.cydeo.service.CompanyService;
+import com.cydeo.service.RoleService;
 import com.cydeo.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
      private final UserService userService;
-     //private final CompanyService companyService;
-     //private final RoleService roleService;
+     private final CompanyService companyService;
+     private final RoleService roleService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, CompanyService companyService, RoleService roleService) {
         this.userService = userService;
+        this.companyService = companyService;
+        this.roleService = roleService;
     }
 
     @GetMapping("/list")
@@ -29,8 +33,9 @@ public class UserController {
     public String createUser(Model model){
 
         model.addAttribute("user", new UserDTO());
-        model.addAttribute("company",);
-        model.addAttribute("role",);
+        model.addAttribute("company", companyService.findAllCompanies());
+        model.addAttribute("role", roleService.findAllRoles());
 
+        return "/user/user-add";
     }
 }
