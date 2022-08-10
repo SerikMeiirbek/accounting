@@ -1,5 +1,8 @@
 package com.cydeo.dto;
 
+import com.cydeo.enums.Status;
+import com.cydeo.model.Company;
+import com.cydeo.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,4 +19,6 @@ public class UserDTO {
     private String passWord;
     private boolean enabled;
     private String phone;
+    private Role role;
+    private Company company;
 }
