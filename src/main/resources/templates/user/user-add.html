@@ -94,7 +94,10 @@
                                                                             required>
                                                                         <option value="">Select Company</option>
                                                                         <option  th:each="companies : ${company}"
+
                                                                           th:value="${companies}" th:text="${companies}"></option>
+                                                                          th:value="${companies}" th:text="${companies.id}"></option>
+
 
                                                                     </select>
                                                                 </div>

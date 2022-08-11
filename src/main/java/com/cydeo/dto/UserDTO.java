@@ -1,5 +1,8 @@
 package com.cydeo.dto;
 
+
+import com.cydeo.enums.Status;
+
 import com.cydeo.model.Company;
 import com.cydeo.model.Role;
 import lombok.AllArgsConstructor;

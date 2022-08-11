@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class RoleServiceImpl implements RoleService {
+
     private final RoleRepository roleRepository;
     private final MapperUtil mapperUtil;
 
@@ -22,35 +23,60 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<RoleDTO> findAllRoles() {
+
         List<Role> role = roleRepository.findAll();
         List<RoleDTO> roleDTO = role.stream().map(r -> mapperUtil.convert(r, new RoleDTO())).collect(Collectors.toList());
         return roleDTO;
+
+       List<Role> role = roleRepository.findAll();
+      List<RoleDTO> roleDTO = role.stream().map(r -> mapperUtil.convert(r, new RoleDTO())).collect(Collectors.toList());
+      return roleDTO;
+
 
     }
 
     @Override
     public RoleDTO createARole(RoleDTO roleDTO) {
         Role  role =  roleRepository.save(mapperUtil.convert(roleDTO, new Role()));
+
         return mapperUtil.convert(role, new RoleDTO());
+
+           return mapperUtil.convert(role, new RoleDTO());
+
 
     }
 
     @Override
     public RoleDTO findById(Long id) {
+
         Role role = roleRepository.findById(id).get();
         return mapperUtil.convert(role, new RoleDTO());
+
+       Role role = roleRepository.findById(id).get();
+       return mapperUtil.convert(role, new RoleDTO());
+
     }
 
     @Override
     public void update(RoleDTO roleDTO) {
+
         Role  role =  roleRepository.findById(roleDTO.getId()).get();
         Role  convertedRole = mapperUtil.convert(roleDTO, new Role());
         convertedRole.setId(role.getId());
+
+      Role  role =  roleRepository.findById(roleDTO.getId()).get();
+      Role  convertedRole = mapperUtil.convert(roleDTO, new Role());
+       convertedRole.setId(role.getId());
+
         roleRepository.save(convertedRole);
     }
 
     @Override
     public void deleteById(Long id) {
+
         roleRepository.deleteById(id);
+
+      roleRepository.deleteById(id);
+
     }
 }
