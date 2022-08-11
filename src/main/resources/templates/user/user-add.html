@@ -32,7 +32,7 @@
 
 
                         <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-right">
-                            <a class="btn btn-primary bg-light-primary mb-1" ><i
+                            <a th:href="@{/user/list}" class="btn btn-primary bg-light-primary mb-1" ><i
                                     class="fa fa-list mr-1"></i>User List</a>
                         </div>
                     </div>
@@ -94,7 +94,10 @@
                                                                             required>
                                                                         <option value="">Select Company</option>
                                                                         <option  th:each="companies : ${company}"
+
+                                                                          th:value="${companies}" th:text="${companies}"></option>
                                                                           th:value="${companies}" th:text="${companies.id}"></option>
+
 
                                                                     </select>
                                                                 </div>

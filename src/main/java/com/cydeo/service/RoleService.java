@@ -1,7 +1,9 @@
 package com.cydeo.service;
 
 import com.cydeo.dto.RoleDTO;
+
 import com.cydeo.repository.RoleRepository;
+
 
 import java.util.List;
 
@@ -16,6 +18,5 @@ public interface RoleService {
     void update(RoleDTO roleDTO);
 
     void deleteById(Long id);
-
 
 }
