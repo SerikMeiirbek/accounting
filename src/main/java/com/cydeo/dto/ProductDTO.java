@@ -21,7 +21,6 @@ import java.math.BigDecimal;
 @Data
 public class ProductDTO {
 
-    @NotNull
     private Long id;
 
     @NotBlank
