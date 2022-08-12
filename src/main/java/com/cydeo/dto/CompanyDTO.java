@@ -1,6 +1,7 @@
 package com.cydeo.dto;
 
 import com.cydeo.enums.State;
+import com.cydeo.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,24 +19,35 @@ public class CompanyDTO {
     private Long id;
 
     @NotBlank
+    private String title;
+
+    private String representative;
+
+    @NotBlank
     private String address1;
 
     private String address2;
 
     @NotNull
-    private String zip;
-
-    private String representative;
-
-    @NotNull
     private String email;
-
-
-    private LocalDate establishmentDate;
-    private boolean enabled;
 
     @NotNull
     private String phone;
+
+    @NotNull
+    private String zip;
+
+     @NotNull
+     private State state;
+
+     @NotBlank
+     private Status status;
+
+     private LocalDate establishmentDate;
+
+     private boolean enabled;
+
+
 
 
 }

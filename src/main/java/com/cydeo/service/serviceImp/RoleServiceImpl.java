@@ -28,10 +28,6 @@ public class RoleServiceImpl implements RoleService {
         List<RoleDTO> roleDTO = role.stream().map(r -> mapperUtil.convert(r, new RoleDTO())).collect(Collectors.toList());
         return roleDTO;
 
-       List<Role> role = roleRepository.findAll();
-      List<RoleDTO> roleDTO = role.stream().map(r -> mapperUtil.convert(r, new RoleDTO())).collect(Collectors.toList());
-      return roleDTO;
-
 
     }
 
@@ -40,8 +36,6 @@ public class RoleServiceImpl implements RoleService {
         Role  role =  roleRepository.save(mapperUtil.convert(roleDTO, new Role()));
 
         return mapperUtil.convert(role, new RoleDTO());
-
-           return mapperUtil.convert(role, new RoleDTO());
 
 
     }
@@ -52,9 +46,6 @@ public class RoleServiceImpl implements RoleService {
         Role role = roleRepository.findById(id).get();
         return mapperUtil.convert(role, new RoleDTO());
 
-       Role role = roleRepository.findById(id).get();
-       return mapperUtil.convert(role, new RoleDTO());
-
     }
 
     @Override
@@ -64,10 +55,6 @@ public class RoleServiceImpl implements RoleService {
         Role  convertedRole = mapperUtil.convert(roleDTO, new Role());
         convertedRole.setId(role.getId());
 
-      Role  role =  roleRepository.findById(roleDTO.getId()).get();
-      Role  convertedRole = mapperUtil.convert(roleDTO, new Role());
-       convertedRole.setId(role.getId());
-
         roleRepository.save(convertedRole);
     }
 
@@ -75,8 +62,6 @@ public class RoleServiceImpl implements RoleService {
     public void deleteById(Long id) {
 
         roleRepository.deleteById(id);
-
-      roleRepository.deleteById(id);
 
     }
 }

@@ -1,10 +1,10 @@
-INSERT INTO company (created_time, created_user_id, is_deleted, updated_time, updated_user_id, address1, address2, email, enabled, establishment_date, phone, representative, state,
+INSERT INTO company (title, created_time, created_user_id, is_deleted, updated_time, updated_user_id, address1, address2, email, enabled, establishment_date, phone, representative, state,
                      zip)
-VALUES ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'Street1 ', 'House Nu: 1', 'root@root.com', TRUE, '2022-07-17', '5551457489', 'Representative Root', 'ALABAMA',
+VALUES ('Orange', '2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'Street1 ', 'House Nu: 1', 'root@root.com', TRUE, '2022-07-17', '5551457489', 'Representative Root', 'ALABAMA',
         '35242'),
-       ('2022-04-10 00:00:00', 1, FALSE, '2022-04-10 00:00:00', 1, 'Street2 ', 'House Nu: 2', 'admin1@admin.com', TRUE, '2022-04-10', '5551457478', 'Admin1 Root', 'ARIZONA',
+       ('Pear', '2022-04-10 00:00:00', 1, FALSE, '2022-04-10 00:00:00', 1, 'Street2 ', 'House Nu: 2', 'admin1@admin.com', TRUE, '2022-04-10', '5551457478', 'Admin1 Root', 'ARIZONA',
         '38704'),
-       ('2022-01-11 00:00:00', 1, FALSE, '2022-01-11 00:00:00', 1, 'Street3 ', 'House Nu: 3', 'admin3@admin.com', TRUE, '2022-01-11', '5551457365', 'Admin2 Root', 'FLORIDA',
+       ('Kiwi', '2022-01-11 00:00:00', 1, FALSE, '2022-01-11 00:00:00', 1, 'Street3 ', 'House Nu: 3', 'admin3@admin.com', TRUE, '2022-01-11', '5551457365', 'Admin2 Root', 'FLORIDA',
         '30307');
 
 INSERT INTO client_vendor (created_time, created_user_id, is_deleted, updated_time, updated_user_id, address, company_title, email, phone, state_id, type, zip_code, company_id)
