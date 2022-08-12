@@ -93,10 +93,8 @@
                                                                     <select th:field="*{company}" id="users-edit-status3" class="form-control"
                                                                             required>
                                                                         <option value="">Select Company</option>
-                                                                        <option  th:each="companies : ${company}"
-
-                                                                          th:value="${companies}" th:text="${companies}"></option>
-                                                                          th:value="${companies}" th:text="${companies.id}"></option>
+<!--                                                                        <option  th:each="companies : ${company}"-->
+<!--                                                                          th:value="${companies}" th:text="${companies}"></option>-->
 
 
                                                                     </select>

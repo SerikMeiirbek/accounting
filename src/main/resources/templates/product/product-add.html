@@ -57,12 +57,14 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="company-name">Company Name</label>
-                                                                    <select disabled id="company-name"
-                                                                            class="form-control">
+                                                                    <select  id="company-name"
+                                                                            class="form-control"
+                                                                            th:field="*{company}">
 
-                                                                        <option
+                                                                        <option th:each="companies : ${company}"
+                                                                                 th:value="${companies}" th:text="${companies.title}"
                                                                                 selected="selected"
-                                                                        ></option>
+                                                                        >Company title</option>
 
                                                                     </select>
                                                                 </div>

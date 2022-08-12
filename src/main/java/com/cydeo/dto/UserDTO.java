@@ -43,6 +43,5 @@ public class UserDTO {
     @NotNull
     private Role role;
 
-    @NotNull
     private Company company;
 }
