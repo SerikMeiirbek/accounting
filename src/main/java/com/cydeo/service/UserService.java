@@ -11,6 +11,8 @@ public interface UserService {
 
     UserDTO registerAUser(UserDTO userDTO);
 
+    UserDTO findByEmail(String email);
+
     UserDTO findById(Long id);
 
     void update(UserDTO userDTO);

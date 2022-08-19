@@ -76,12 +76,14 @@
                                                                            placeholder="zipcode" required
                                                                            aria-invalid="false"
                                                                            th:field="*{zip}">
-                                                                       <div class="invalid-feedback"
-                                                                            th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}">
+<!--                                                                       <div class="invalid-feedback"-->
+<!--                                                                            th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}">-->
 <!--                                                                              <ul>-->
 <!--                                                                                   <li th:each="err : ${#fields.errors('zip')}"-->
 <!--                                                                                     th:text="${err}"></li>-->
 <!--                                                                              </ul>-->
+                                                                    <div th:if="${param.error}" class="alert alert-danger">
+                                                                          invalid zip code
                                                                        </div>
                                                                 </div>
                                                             </div>
