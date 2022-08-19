@@ -4,6 +4,7 @@ import com.cydeo.dto.ProductDTO;
 import com.cydeo.enums.Status;
 import com.cydeo.enums.Unit;
 import com.cydeo.service.CategoryService;
+import com.cydeo.service.CompanyService;
 import com.cydeo.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +19,13 @@ public class ProductController {
 
     private final ProductService productService;
     private final CategoryService categoryService;
+    private final CompanyService companyService;
 
 
-    public ProductController(ProductService productService, CategoryService categoryService) {
+    public ProductController(ProductService productService, CategoryService categoryService, CompanyService companyService) {
         this.productService = productService;
         this.categoryService = categoryService;
+        this.companyService = companyService;
     }
 
     @GetMapping("/list")
@@ -39,6 +42,7 @@ public class ProductController {
 
         model.addAttribute("product", new ProductDTO());
         model.addAttribute("categories", categoryService.findAllCategories());
+        model.addAttribute("company", companyService.findAllCompanies());
         model.addAttribute("status", Status.values());
         model.addAttribute("unit", Unit.values());
 
