@@ -5,9 +5,9 @@ import com.cydeo.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -29,12 +29,16 @@ public class CompanyDTO {
     private String address2;
 
     @NotNull
+    @Email
     private String email;
 
     @NotNull
+    @Pattern(regexp = "^\\d{10}$")
+    @Size(max = 10)
     private String phone;
 
     @NotNull
+    @Size(max = 5)
     private String zip;
 
      @NotNull
@@ -43,6 +47,7 @@ public class CompanyDTO {
      @NotBlank
      private Status status;
 
+     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
      private LocalDate establishmentDate;
 
      private boolean enabled;
