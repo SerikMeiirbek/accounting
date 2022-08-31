@@ -49,12 +49,12 @@ VALUES ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, TRUE, 'Root')
        ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, TRUE, 'Employee');
 
 INSERT INTO users(created_time, created_user_id, is_deleted, updated_time, updated_user_id, email, enabled, first_name, last_name, pass_word, phone, company_id, role_id)
-VALUES ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'root@root.com', TRUE, 'Root', 'RootSurname', 'Abc1', '0000000000', 1, 1),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'admin1@admin.com', TRUE, 'Admin1', 'AdminLName1', 'Abc1', '0000000001', 2, 2),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'admin2@admin.com', TRUE, 'Admin2', 'AdminLName2', 'Abc1', '0000000002', 3, 2),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager1@admin.com', TRUE, 'Manager1', 'ManagerLName1', 'Abc1', '0000000003', 2, 3),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager2@admin.com', TRUE, 'Manager2', 'ManagerLName2', 'Abc1', '0000000004', 2, 3),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager3@admin.com', TRUE, 'Manager3', 'ManagerLName3', 'Abc1', '0000000005', 3, 3),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager4@admin.com', TRUE, 'Manager4', 'ManagerLName4', 'Abc1', '0000000006', 3, 3),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'employee1@employee.com', TRUE, 'Employee1', 'EmployeeLName1', 'Abc1', '0000000007', 2, 4),
-       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'employee2@employee.com', TRUE, 'Employee2', 'EmployeeLName2', 'Abc1', '0000000008', 2, 4);
+VALUES ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'root@root.com', TRUE, 'Root', 'RootSurname', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000000', 1, 1),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'admin1@admin.com', TRUE, 'Admin1', 'AdminLName1', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000001', 2, 2),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'admin2@admin.com', TRUE, 'Admin2', 'AdminLName2', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000002', 3, 2),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager1@admin.com', TRUE, 'Manager1', 'ManagerLName1', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000003', 2, 3),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager2@admin.com', TRUE, 'Manager2', 'ManagerLName2', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000004', 2, 3),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager3@admin.com', TRUE, 'Manager3', 'ManagerLName3', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000005', 3, 3),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'manager4@admin.com', TRUE, 'Manager4', 'ManagerLName4', '$2a$10$O2nM71gvhGfGc.Zq2HXQwOff7S81P5Pcvn43exT57twISXHI9WLVy', '0000000006', 3, 3),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'employee1@employee.com', TRUE, 'Employee1', 'EmployeeLName1', '$2a$10$OyVyf6wQitlBPFZqWgmLMO3kYlbdCMKZtpTKfwhu.Sd7zebxDFxoW', '0000000007', 2, 4),
+       ('2022-05-01 00:00:00', 1, FALSE, '2022-05-01 00:00:00', 1, 'employee2@employee.com', TRUE, 'Employee2', 'EmployeeLName2', '$2a$10$OyVyf6wQitlBPFZqWgmLMO3kYlbdCMKZtpTKfwhu.Sd7zebxDFxoW', '0000000008', 2, 4);

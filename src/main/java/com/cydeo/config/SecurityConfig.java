@@ -46,7 +46,7 @@ public class SecurityConfig {
              .anyRequest().authenticated()
              .and()
              //.httpBasic() //use spring default login pop-up
-             .formLogin()//to use app's login page
+             .formLogin() //to use app's login page
                   .loginPage("/login")
                   //.defaultSuccessUrl("/dashboard")
                   .successHandler(authSuccessHandler)
